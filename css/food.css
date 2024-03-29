@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins';
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('../assets/image/wallpaper.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container .breakroom_text {
+    font-family: "Inter", sans-serif;
+    color: #ffe600;
+}
+
+.container .breakroom_text span {
+    font-size: 35px;
+    font-weight: 900;
+    color: #d17721;
+}
+
+.container .breakroom_text h3 {
+    font-size: 30px;
+}
+
+.container .breakroom_text form {
+    width: 300px;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .breakroom_text form input[type="number"],
+.container .breakroom_text form select,
+.container .breakroom_text form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+.container .breakroom_text form input[type="submit"] {
+    background-color: #7c7c7c;
+    color: #ffe600;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.container .breakroom_text form input[type="submit"]:hover {
+    background-color: #ffe600;
+    color: #7c7c7c;
+}
+
+
+.wrapper {
+    height: 100%;
+    width: 300px;
+    position: relative;
+}
+
+.wrapper .menu-btn{
+    position: absolute;
+    left: 20px;
+    top: 10px;
+    background: #181818;
+    color: #ffe600;
+    height: 45px;
+    width: 45px;
+    z-index: 999;
+    border: 1px solid #ffe600;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+}
+#btn:checked ~ .menu-btn{
+    left: 247px;
+}
+.wrapper .menu-btn i{
+    position: absolute;
+    font-size: 37px;
+    transition: all 0.3s ease;
+}
+
+#sidebar{
+    position: fixed;
+    background-color: #181818;
+    height: 100%;
+    width: 270px;
+    overflow: hidden;
+    left: -270px;
+    transition: all 0.3s ease;
+
+}
+
+#btn:checked ~ #sidebar {
+    left: 0;
+}
+
+#sidebar .list-items {
+    position: relative;
+    background: #181818;
+    width: 100%;
+    height: 100%;
+    list-style: none;
+}
+
+#sidebar .list-items li {
+    padding-left: 40px;
+    line-height: 50px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-bottom: 1px solid #ffffff58;
+    transition: all 0.3s ease;
+}
+
+#sidebar .list-items li:hover {
+    border-top: 1px solid transparent;
+    border-bottom: 1px solid transparent;
+    box-shadow: 0 0px 10px 3px #ffe600;
+}
+
+#sidebar .list-items li:first-child {
+    border-top: none;
+}
+
+#sidebar .list-items li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+#sidebar .list-items li a i {
+    margin-right: 20px;
+}
+
