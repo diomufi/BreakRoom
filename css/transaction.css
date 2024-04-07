@@ -1,157 +1,195 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Poppins';
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins";
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-image: url('../assets/image/wallpaper.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(
+      348deg,
+      transparent 0%,
+      transparent 76%,
+      rgba(194, 194, 194, 0.04) 76%,
+      rgba(194, 194, 194, 0.04) 93%,
+      transparent 93%,
+      transparent 100%
+    ),
+    linear-gradient(
+      150deg,
+      transparent 0%,
+      transparent 10%,
+      rgba(194, 194, 194, 0.04) 10%,
+      rgba(194, 194, 194, 0.04) 74%,
+      transparent 74%,
+      transparent 100%
+    ),
+    linear-gradient(
+      68deg,
+      transparent 0%,
+      transparent 36%,
+      rgba(194, 194, 194, 0.04) 36%,
+      rgba(194, 194, 194, 0.04) 47%,
+      transparent 47%,
+      transparent 100%
+    ),
+    linear-gradient(
+      199deg,
+      transparent 0%,
+      transparent 37%,
+      rgba(194, 194, 194, 0.04) 37%,
+      rgba(194, 194, 194, 0.04) 47%,
+      transparent 47%,
+      transparent 100%
+    ),
+    linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0));
+  background-size: auto;
+  background-size: cover;
 }
 
-.wrapper{
-    height: 100%;
-    width: 300px;
-    position: fixed;
-    top: 0px;
+.wrapper {
+  height: 100%;
+  width: 300px;
+  position: fixed;
+  top: 0px;
 }
 
-.wrapper .menu-btn{
-    position: absolute;
-    left: 20px;
-    top: 10px;
-    background: #181818;
-    color: #ffe600;
-    height: 45px;
-    width: 45px;
-    z-index: 999;
-    border: 1px solid #ffe600;
-    border-radius: 5px;
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    transition: all 0.3s ease;
+.wrapper .menu-btn {
+  position: absolute;
+  left: 20px;
+  top: 10px;
+  background: #181818;
+  color: #ffe600;
+  height: 45px;
+  width: 45px;
+  z-index: 999;
+  border: 1px solid #ffe600;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
 }
-#btn:checked ~ .menu-btn{
-    left: 247px;
+#btn:checked ~ .menu-btn {
+  left: 247px;
 }
-.wrapper .menu-btn i{
-    position: absolute;
-    font-size: 37px;
-    transition: all 0.3s ease;
-}
-
-#sidebar{
-    position: fixed;
-    background-color: #181818;
-    height: 100%;
-    width: 270px;
-    overflow: hidden;
-    left: -270px;
-    transition: all 0.3s ease;
-
+.wrapper .menu-btn i {
+  position: absolute;
+  font-size: 37px;
+  transition: all 0.3s ease;
 }
 
-#btn:checked ~ #sidebar{
-    left: 0;
+#sidebar {
+  position: fixed;
+  background-color: #181818;
+  height: 100%;
+  width: 270px;
+  overflow: hidden;
+  left: -270px;
+  transition: all 0.3s ease;
 }
 
-#sidebar .list-items{
-    position: relative;
-    background: #181818;
-    width: 100%;
-    height: 100%;
-    list-style: none;
+#btn:checked ~ #sidebar {
+  left: 0;
 }
 
-#sidebar .list-items li{
-    padding-left: 40px;
-    line-height: 50px;
-    border-top: 1px solid rgba(255,255,255,0.1);
-    border-bottom: 1px solid #ffffff58;
-    transition: all 0.3s ease;
+#sidebar .list-items {
+  position: relative;
+  background: #181818;
+  width: 100%;
+  height: 100%;
+  list-style: none;
 }
 
-#sidebar .list-items li:hover{
-    border-top:  1px solid transparent;
-    border-bottom: 1px solid transparent;
-    box-shadow:  0 0px 10px 3px #ffe600;
+#sidebar .list-items li {
+  padding-left: 40px;
+  line-height: 50px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 1px solid #ffffff58;
+  transition: all 0.3s ease;
 }
 
-#sidebar .list-items li:first-child{
-    border-top: none;
+#sidebar .list-items li:hover {
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid transparent;
+  box-shadow: 0 0px 10px 3px #ffe600;
 }
 
-#sidebar .list-items li a{
-    color: #fff;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 500;
-    height: 100%;
-    width: 100%;
-    display: block;
+#sidebar .list-items li:first-child {
+  border-top: none;
+}
+
+#sidebar .list-items li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+  height: 100%;
+  width: 100%;
+  display: block;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
 }
 
 .container h2 {
-    margin-bottom: 20px;
-    color: #ffe600;
-    text-align: center;
+  margin-bottom: 20px;
+  color: #ffe600;
+  text-align: center;
 }
 
 .table-container {
-    overflow-x: auto;
-    max-width: 100%;
+  overflow-x: auto;
+  max-width: 100%;
 }
 
 table {
-    width: 100%;
-    border-collapse: collapse;
+  width: 100%;
+  border-collapse: collapse;
 }
 
-table, th, td {
-    border: 1px solid #fff;
+table,
+th,
+td {
+  border: 1px solid #fff;
 }
 
-th, td {
-    padding: 10px;
-    text-align: left;
-    color: #fff;
+th,
+td {
+  padding: 10px;
+  text-align: left;
+  color: #fff;
 }
 
 tr:nth-child(even) {
-    background-color: #555;
+  background-color: #555;
 }
 
 button {
-    background-color: #4CAF50;
-    border: none;
-    color: white;
-    padding: 5px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 14px;
-    margin: 2px 2px;
-    cursor: pointer;
-    border-radius: 5px;
+  background-color: #4caf50;
+  border: none;
+  color: white;
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  margin: 2px 2px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 button:hover {
-    background-color: #45a049;
+  background-color: #45a049;
 }
