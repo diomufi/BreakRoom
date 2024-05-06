@@ -92,7 +92,7 @@ body {
 .container .breakroom_text form input[type="date"],
 .container .breakroom_text form input[type="time"],
 .container .breakroom_text form input[type="number"],
-.container .breakroom_text form input[type="button"],
+.container .breakroom_text form input[type="submit"],
 .container .breakroom_text form select {
   width: 100%;
   padding: 10px;
@@ -101,7 +101,7 @@ body {
   border-radius: 5px;
   border: 1px solid #ccc;
 }
-.container .breakroom_text form input[type="button"] {
+.container .breakroom_text form input[type="submit"] {
   background-color: #7c7c7c;
   color: #ffe600;
   border: none;
@@ -111,7 +111,7 @@ body {
   cursor: pointer;
   transition: background-color 0.3s;
 }
-.container .breakroom_text form input[type="button"]:hover {
+.container .breakroom_text form input[type="submit"]:hover {
   background-color: #ffe600;
   color: #7c7c7c;
 }
