@@ -6,7 +6,6 @@
   box-sizing: border-box;
   font-family: "Poppins";
 }
-
 body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -51,14 +50,76 @@ body {
   background-size: auto;
   background-size: cover;
 }
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.container .breakroom_text {
+  font-family: "Inter", sans-serif;
+  align-items: center;
+  color: #ffe600;
+}
+.container .breakroom_text h3 {
+  font-size: 30px;
+  text-align: center;
+}
+.container .breakroom_text form {
+  width: 300px;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
 
+.container .breakroom_text form label {
+  color: #ffe600;
+  font-size: 15px;
+  margin-bottom: 0px;
+}
+
+.container .breakroom_text form label[for="StartTimeLabel"] {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.container .breakroom_text form input[type="text"],
+.container .breakroom_text form input[type="email"],
+.container .breakroom_text form input[type="password"],
+.container .breakroom_text form input[type="number"],
+.container .breakroom_text form input[type="submit"],
+.container .breakroom_text form select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+.container .breakroom_text form input[type="submit"] {
+  background-color: #7c7c7c;
+  color: #ffe600;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+.container .breakroom_text form input[type="submit"]:hover {
+  background-color: #ffe600;
+  color: #7c7c7c;
+}
 .wrapper {
   height: 100%;
   width: 300px;
-  position: fixed;
-  top: 0px;
+  position: relative;
 }
-
 .wrapper .menu-btn {
   position: absolute;
   left: 20px;
@@ -84,7 +145,6 @@ body {
   font-size: 37px;
   transition: all 0.3s ease;
 }
-
 #sidebar {
   position: fixed;
   background-color: #181818;
@@ -94,11 +154,9 @@ body {
   left: -270px;
   transition: all 0.3s ease;
 }
-
 #btn:checked ~ #sidebar {
   left: 0;
 }
-
 #sidebar .list-items {
   position: relative;
   background: #181818;
@@ -106,7 +164,6 @@ body {
   height: 100%;
   list-style: none;
 }
-
 #sidebar .list-items li {
   padding-left: 40px;
   line-height: 50px;
@@ -114,17 +171,14 @@ body {
   border-bottom: 1px solid #ffffff58;
   transition: all 0.3s ease;
 }
-
 #sidebar .list-items li:hover {
   border-top: 1px solid transparent;
   border-bottom: 1px solid transparent;
   box-shadow: 0 0px 10px 3px #ffe600;
 }
-
 #sidebar .list-items li:first-child {
   border-top: none;
 }
-
 #sidebar .list-items li a {
   color: #fff;
   text-decoration: none;
@@ -134,71 +188,6 @@ body {
   width: 100%;
   display: block;
 }
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  margin-top: 50px;
-}
-
-.container h2 {
-  margin-bottom: 20px;
-  color: #ffe600;
-  text-align: center;
-}
-
-.table-container {
-  overflow-x: auto;
-  width: 100%;
-  max-width: 100%;
-}
-
-table {
-  width: 75%;
-  margin-top: 20px; 
-  border-collapse: collapse;
-  background-color: #181818; 
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-th,
-td {
-  padding: 10px;
-  text-align: left;
-  border: 1px solid #ffffff58; 
-  color: #fff; 
-}
-
-th {
-  background-color: #202020; 
-}
-
-tr:nth-child(even) {
-  background-color: #282828; 
-}
-
-tr:hover {
-  background-color: #333;
-}
-
-button {
-  background-color: #e01111;
-  border: none;
-  color: white;
-  padding: 5px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 14px;
-  margin: 2px 2px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-button:hover {
-  background-color: #ae0a0a;
+#sidebar .list-items li a i {
+  margin-right: 20px;
 }

@@ -156,7 +156,8 @@ body {
   }
   
   table {
-    width: 100%;
+    text-align: center;
+    width: 70%;
     margin-top: 20px;  
     border-collapse: collapse;
     background-color: #181818; 
@@ -182,13 +183,15 @@ body {
   }
   
   button {
-    background-color: #4caf50; 
+    
+    background-color: #eb0c0c; 
     border: none;
     color: white;
-    padding: 5px 10px;
+    padding: 5px 30px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
+    align-items: center;
     font-size: 14px;
     margin: 2px 2px;
     cursor: pointer;
@@ -196,6 +199,6 @@ body {
   }
   
   button:hover {
-    background-color: #45a049;  }
+    background-color: #a30000;  }
   
 

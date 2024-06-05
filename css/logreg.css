@@ -72,6 +72,7 @@ header h1 span {
 nav {
   display: flex;
   justify-content: space-between;
+  margin-top: 20px;
   align-items: center;
   font-family: "Raleway", sans-serif;
   height: 50px;

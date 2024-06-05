@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
+if (!isset($_SESSION['user_role']) || ($_SESSION['user_role'] !== 'admin' && $_SESSION['user_role'] !== 'officer')) {
     header("Location: index.php");
     exit;
 }
@@ -19,25 +19,7 @@ if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
     <link rel="stylesheet" href="fontawesome/fontawesome-free-6.2.1-web/css/all.css">
 </head>
 <body>
-    <div class="wrapper">
-        <input type="checkbox" id="btn" hidden>
-        <label for="btn" class="menu-btn"><i class="ph-thin ph-list"></i></label>
-                        </label>
-        <nav id="sidebar">
-            <div class="logo">
-                <h1 style="text-align: center; color: white; font-size: 30px;">Break<span style="color: #ffe600;">Room.id</span></h1>
-
-            </div>
-                <ul class="list-items">
-                <li><a href="admin.php"><i class="fas fa-home"></i>Home</a></li>
-                <li><a href="tablebook.php"><i class="fas fa-table"></i>Table Book</a></li>
-                <li><a href="food.php"><i class="fas fa-food-beverage"></i>Food And Beverage</a></li>
-                <li><a href="livetable.php"><i class="fas fa-live-table"></i>Live Table</a></li>
-                <li><a href="transaction.php"><i class="fas fa-trx"></i>Transaction</a></li>
-                <li><a href="logout.php"><i class="fas fa-logout"></i>Log Out</a></li>
-            </ul>
-        </nav>
-    </div>
-    
+    <?php include "sidebar.php" ?>
 </body>
+
 </html>

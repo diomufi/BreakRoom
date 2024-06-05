@@ -50,6 +50,7 @@ body {
 }
 
 .container .breakroom_text form input[type="number"],
+.container .breakroom_text form input[type="text"],
 .container .breakroom_text form select,
 .container .breakroom_text form input[type="submit"] {
     width: 100%;

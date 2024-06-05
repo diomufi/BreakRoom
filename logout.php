@@ -1,9 +1,7 @@
 <?php
-session_start(); // Memulai sesi
-
-session_unset(); // Menghapus semua variabel sesi
-session_destroy(); // Menghancurkan sesi
-
-header("Location: index.php"); // Mengalihkan pengguna ke halaman login
+session_start();
+session_unset();
+session_destroy();
+header("Location: index.php");
 exit;
 ?>
