@@ -4,14 +4,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins";
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-image: linear-gradient(
+  background: linear-gradient(
       348deg,
       transparent 0%,
       transparent 76%,
@@ -48,7 +47,6 @@ body {
       transparent 100%
     ),
     linear-gradient(90deg, rgb(0, 0, 0), rgb(0, 0, 0));
-  background-size: auto;
   background-size: cover;
 }
 
@@ -56,7 +54,7 @@ body {
   height: 100%;
   width: 300px;
   position: fixed;
-  top: 0px;
+  top: 0;
 }
 
 .wrapper .menu-btn {
@@ -76,9 +74,11 @@ body {
   align-items: center;
   transition: all 0.3s ease;
 }
+
 #btn:checked ~ .menu-btn {
   left: 247px;
 }
+
 .wrapper .menu-btn i {
   position: absolute;
   font-size: 37px;
@@ -130,9 +130,13 @@ body {
   text-decoration: none;
   font-size: 18px;
   font-weight: 500;
+  display: block;
   height: 100%;
   width: 100%;
-  display: block;
+}
+
+.content {
+  padding: 1px;
 }
 
 .container {
@@ -140,13 +144,57 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 
 .container h2 {
   margin-bottom: 20px;
   color: #ffe600;
   text-align: center;
+}
+
+.filter-container {
+  margin-bottom: 20px;
+  background-color: #202020;
+  padding: 10px;
+  border-radius: 7px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.filter-container form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.filter-container label {
+  margin-right: 10px;
+  font-size: 14px;
+  color: #ffe600;
+}
+
+.filter-container input[type="date"] {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.filter-container button {
+  background-color: #068526;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.filter-container button:hover {
+  background-color: #02611a;
 }
 
 .table-container {
@@ -156,29 +204,28 @@ body {
 }
 
 table {
-  width: 75%;
-  margin-top: 20px; 
+  width: 70%;
+  margin-top: 20px;
   border-collapse: collapse;
-  background-color: #181818; 
+  background-color: #181818;
   margin-left: auto;
   margin-right: auto;
 }
 
-
 th,
 td {
-  padding: 10px;
+  padding: 12px;
   text-align: left;
-  border: 1px solid #ffffff58; 
-  color: #fff; 
+  border: 1px solid #ffffff58;
+  color: #fff;
 }
 
 th {
-  background-color: #202020; 
+  background-color: #202020;
 }
 
 tr:nth-child(even) {
-  background-color: #282828; 
+  background-color: #282828;
 }
 
 tr:hover {
@@ -189,12 +236,12 @@ button {
   background-color: #e01111;
   border: none;
   color: white;
-  padding: 5px 10px;
+  padding: 8px 16px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 14px;
-  margin: 2px 2px;
+  margin: 4px 2px;
   cursor: pointer;
   border-radius: 5px;
 }

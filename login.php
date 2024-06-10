@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Fungsi untuk melakukan koneksi ke database
 function connectDB() {
     $servername = 'localhost';
     $username = 'root';
@@ -14,7 +13,6 @@ function connectDB() {
     return $koneksi;
 }
 
-// Fungsi untuk menambahkan user baru ke dalam tabel
 function addUser($nama, $username, $email, $password) {
     $koneksi = connectDB();
     $query = "INSERT INTO user (Nama, Username, Email, Password) VALUES ('$nama', '$username', '$email', '$password')";
@@ -23,7 +21,6 @@ function addUser($nama, $username, $email, $password) {
     return $result;
 }
 
-// Fungsi untuk melakukan login
 function login($email, $password) {
     $koneksi = connectDB();
     $queryAdmin = "SELECT * FROM admin WHERE Email='$email'";
@@ -32,7 +29,6 @@ function login($email, $password) {
     $resultAdmin = mysqli_query($koneksi, $queryAdmin);
     $resultUser = mysqli_query($koneksi, $queryUser);
     
-    // Periksa jika pengguna ada di tabel admin
     if (mysqli_num_rows($resultAdmin) == 1) {
         $row = mysqli_fetch_assoc($resultAdmin);
         if ($password == $row['Password']) {
@@ -50,14 +46,13 @@ function login($email, $password) {
             return 'Password salah';
         }
     }
-    // Periksa jika pengguna ada di tabel user
     elseif (mysqli_num_rows($resultUser) == 1) {
         $row = mysqli_fetch_assoc($resultUser);
         if ($password == $row['Password']) {
             $_SESSION['user_role'] = 'user';
             $_SESSION['username'] = $row['Nama'];
             mysqli_close($koneksi);
-            return 'dashboard.php'; // Redirect ke dashboard user
+            return 'dashboard.php';
         } else {
             mysqli_close($koneksi);
             return 'Password salah';
@@ -68,7 +63,6 @@ function login($email, $password) {
     }
 }
 
-// Proses login atau sign-up
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (isset($_POST['login'])) {
         $email = $_POST['email'];
@@ -132,7 +126,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <div class="main">      
 <input type="checkbox" id="chk" aria-hidden="true">
     <div class="signup">
-    <!-- Form sign up -->
     <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
         <label for="chk" aria-hidden="true">Sign up</label>
         <input type="text" name="nama" placeholder="Name" required="">
@@ -143,7 +136,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </form>
     </div>
     <div class="login">
-      <!-- Form login -->
       <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="POST">
           <label for="chk" aria-hidden="true">Login</label>
           <input type="email" name="email" placeholder="Email" required="">

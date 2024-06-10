@@ -39,13 +39,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="fontawesome/fontawesome-free-6.2.1-web/css/all.css">
     <script src="js/main.js"></script>
     <script>
-        // Script untuk menghilangkan pesan setelah 5 detik
         setTimeout(function() {
             var messageElement = document.querySelector('.message');
             if (messageElement) {
                 messageElement.style.display = 'none';
             }
-        }, 5000); // 5000 milidetik = 5 detik
+        }, 5000);
     </script>
 </head>
 <body>

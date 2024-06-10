@@ -34,17 +34,14 @@ if (!isset($_SESSION['user_role']) || ($_SESSION['user_role'] !== 'admin' && $_S
             $error_message = '';
 
             if ($_SERVER["REQUEST_METHOD"] == "POST") {
-                // Ambil nilai dari form
                 $id_member = mysqli_real_escape_string($koneksi, $_POST['id_member']);
                 $nama = mysqli_real_escape_string($koneksi, $_POST['nama']);
                 $member_type = mysqli_real_escape_string($koneksi, $_POST['member_type']);
 
-                // Query untuk memasukkan data ke dalam tabel member
                 $query = "INSERT INTO member (id_member, Nama, Member_type) VALUES (?, ?, ?)";
                 $stmt = mysqli_prepare($koneksi, $query);
                 mysqli_stmt_bind_param($stmt, "sss", $id_member, $nama, $member_type);
 
-                // Eksekusi query
                 if (mysqli_stmt_execute($stmt)) {
                     mysqli_stmt_close($stmt);
                     mysqli_close($koneksi);
@@ -74,7 +71,6 @@ if (!isset($_SESSION['user_role']) || ($_SESSION['user_role'] !== 'admin' && $_S
     </div>
 
     <script>
-        // Hapus pesan sukses setelah 5 detik
         window.onload = function() {
             var successMessage = document.getElementById('successMessage');
             if (successMessage) {

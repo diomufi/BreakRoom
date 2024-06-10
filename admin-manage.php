@@ -4,16 +4,10 @@ if (!isset($_SESSION['user_role']) || $_SESSION['user_role'] !== 'admin') {
     header("Location: index.php");
     exit;
 }
-
-// Mengambil koneksi dari file connection.php
 require_once "connection.php";
-
-// Logika untuk menghapus data admin
 $deletion_success = false;
 if (isset($_GET['delete_id'])) {
     $delete_id = $_GET['delete_id'];
-
-    // Query untuk menghapus data admin
     $delete_query = "DELETE FROM admin WHERE id_admin = ?";
     if ($stmt = mysqli_prepare($koneksi, $delete_query)) {
         mysqli_stmt_bind_param($stmt, "s", $delete_id);
@@ -22,12 +16,10 @@ if (isset($_GET['delete_id'])) {
         $deletion_success = true;
     }
 
-    // Redirect untuk menghindari penghapusan ulang saat refresh halaman
     header("Location: admin-manage.php?deleted=" . ($deletion_success ? "true" : "false"));
     exit;
 }
 
-// Query untuk mengambil semua data admin
 $query = "SELECT * FROM admin";
 $result = mysqli_query($koneksi, $query);
 ?>
